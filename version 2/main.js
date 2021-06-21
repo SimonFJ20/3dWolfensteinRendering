@@ -69,13 +69,13 @@ const gameLoop = () => {
     let timeDelta = now - before;
     before = now;
 
-    if (util_keyIsPressed('a'))
+    if (util_keyIsPressed('a') || util_keyIsPressed('arrowleft'))
         playerAngle += 1 * timeDelta;
 
-    if (util_keyIsPressed('d'))
+    if (util_keyIsPressed('d') || util_keyIsPressed('arrowright'))
         playerAngle -= 1 * timeDelta;
 
-    if (util_keyIsPressed('w')) {
+    if (util_keyIsPressed('w') || util_keyIsPressed('arrowup')) {
         // move player along playerAngle vector
         playerX += Math.sin(playerAngle) * 3 * timeDelta;
         playerY += Math.cos(playerAngle) * 3 * timeDelta;
@@ -87,7 +87,7 @@ const gameLoop = () => {
         }
     }
     
-    if (util_keyIsPressed('s')) {
+    if (util_keyIsPressed('s') || util_keyIsPressed('arrowdown')) {
         playerX -= Math.sin(playerAngle) * 3 * timeDelta;
         playerY -= Math.cos(playerAngle) * 3 * timeDelta;
 

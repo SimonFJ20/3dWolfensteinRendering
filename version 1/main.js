@@ -68,13 +68,13 @@ const gameLoop = () => {
     let fElapsedTime = tp2 - tp1;
     tp1 = tp2;
 
-    if (util_keyIsPressed('a'))
+    if (util_keyIsPressed('a') || util_keyIsPressed('arrowleft'))
         fPlayerA -= 0.8 * fElapsedTime;
 
-    if (util_keyIsPressed('d'))
+    if (util_keyIsPressed('d') || util_keyIsPressed('arrowright'))
         fPlayerA += 0.8 * fElapsedTime;
 
-    if (util_keyIsPressed('w')) {
+    if (util_keyIsPressed('w') || util_keyIsPressed('arrowup')) {
         fPlayerX += Math.sin(fPlayerA) * 5 * fElapsedTime;
         fPlayerY += Math.cos(fPlayerA) * 5 * fElapsedTime;
 
@@ -84,7 +84,7 @@ const gameLoop = () => {
         }
     }
     
-    if (util_keyIsPressed('s')) {
+    if (util_keyIsPressed('s') || util_keyIsPressed('arrowdown')) {
         fPlayerX -= Math.sin(fPlayerA) * 5 * fElapsedTime;
         fPlayerY -= Math.cos(fPlayerA) * 5 * fElapsedTime;
 
